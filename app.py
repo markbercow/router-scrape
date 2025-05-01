@@ -3,6 +3,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 import pandas as pd
 import time
+from datetime import datetime
+
 
 # Set up Chrome options
 options = Options()
@@ -35,7 +37,8 @@ try:
 
     # Create and display a pandas DataFrame
     df = pd.DataFrame(rows)
-    # df.to_csv('ip-addresses.csv', index=False)
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
+    df.to_csv(f'ip-addresses_{timestamp}.csv', index=False)
 
 finally:
     driver.quit()

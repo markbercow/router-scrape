@@ -1,3 +1,5 @@
 .venv/
 chromedriver.exe
-ip-addresses.csv
+*.csv
+.vscode/
+
